@@ -1,0 +1,146 @@
+﻿@page "/disciplines/{DisciplineId:guid}/createSession"
+@using MicroLMS.Domain
+@using System.ComponentModel.DataAnnotations
+@inject HttpClient _http
+@inject NavigationManager _myNavigationManager
+
+<section class="--container">
+    <h1 class="title h3">Создание занятия</h1>
+    <EditForm Model="@_session">
+        <div class="mb-3">
+            <label class="form-label" for="session-name">Название занятия:</label>
+            <InputText class="form-control" id="session-name" @bind-Value="_session.Name"></InputText>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="session-type">Название дисциплины:</label>
+            <InputSelect class="form-select" id="session-type" @bind-Value="_session.Type">
+                <option value="@SessionType.Practical" selected>Практическая</option>
+                <option value="@SessionType.Laboratory">Лабораторная</option>
+                <option value="@SessionType.LaboratoryPractical">Лабораторный практикум</option>
+                <option value="@SessionType.CourseWork">Курсовая работа</option>
+                <option value="@SessionType.CourseProject">Курсовой проект</option>
+            </InputSelect>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="session-hours">Часы:</label>
+            <InputNumber class="form-control" id="session-hours" @bind-Value="_session.Hours"></InputNumber>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="session-description">Описание:</label>
+            <InputTextArea class="form-control" id="session-description" @bind-Value="_session.Description"></InputTextArea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="session-content">Ссылка на содержимое:</label>
+            <div class="d-flex">
+                <InputSelect class="form-select me-2" id="session-content" @bind-Value="_session.ContentLinkId">
+                    @if (_contentLinks == null)
+                    {
+                        <option value="" disabled></option>
+                    }
+                    else
+                    {
+                        @foreach (var contentLink in _contentLinks)
+                        {
+                            <option value="@contentLink.Id" selected>@contentLink.Url</option>
+                        }
+                    }
+                </InputSelect>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contentModal">
+                    Добавить
+                </button>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-success" @onclick="@CreateSession">Сохранить</button>
+        </div>
+    </EditForm>
+    
+    <div class="modal fade" id="contentModal" tabindex="-1" aria-labelledby="contentModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contentModalLabel">Добавить ссылку на контент</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <EditForm Model="@_content">
+                    <div class="mb-3">
+                        <label class="form-label" for="content-url">Ссылка:</label>
+                        <InputText class="form-control" id="content-url" @bind-Value="_content.Url"></InputText>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="content-type">Тип содержимого:</label>
+                        <InputSelect class="form-select" id="content-type" @bind-Value="_content.Type">
+                            <option value="@ContentLinkType.Book" selected>Книга</option>
+                            <option value="@ContentLinkType.Document">Документ</option>
+                            <option value="@ContentLinkType.File">Файл</option>
+                            <option value="@ContentLinkType.Image">Изображение</option>
+                            <option value="@ContentLinkType.Video">Видео</option>
+                        </InputSelect>
+                    </div>
+                </EditForm>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
+            <button type="button" class="btn btn-primary" @onclick="@CreateContent">Добавить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+@code {
+    [Parameter]
+    public Guid DisciplineId { get; set; }
+    private Session _session = new();
+    private ContentLink _content = new();
+    private IList<ContentLink>? _contentLinks;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        _contentLinks = await _http.GetFromJsonAsync<IList<ContentLink>>("/api/ContentLink");
+    }
+
+    class Session
+    {
+        
+        [Required]
+        public string? Name { get; set; }
+        [Required]
+        public SessionType? Type { get; set; }
+        [Required]
+        public int? Hours { get; set; }
+        [Required]
+        public string? Description { get; set; }
+        [Required]
+        public Guid? ContentLinkId { get; set; }
+        [Required]
+        public Guid? DisciplineId { get; set; }
+    }
+    
+    class ContentLink
+    {   
+        public Guid Id { get; set; }
+        
+        [Required]
+        public string? Url { get; set; }
+        [Required]
+        public ContentLinkType? Type { get; set; }
+    }
+    
+    private async Task CreateSession()
+    {
+        _session.DisciplineId = DisciplineId;
+        var response = await _http.PostAsJsonAsync("/api/Session", _session);
+        _session = await response.Content.ReadFromJsonAsync<Session>() ?? throw new InvalidOperationException();
+        _myNavigationManager.NavigateTo("/disciplines/" + DisciplineId);
+    }
+    
+    private async Task CreateContent()
+    {
+        _session.DisciplineId = DisciplineId;
+        var response = await _http.PostAsJsonAsync("/api/ContentLink", _content);
+        _content = await response.Content.ReadFromJsonAsync<ContentLink>() ?? throw new InvalidOperationException();
+        _contentLinks = await _http.GetFromJsonAsync<IList<ContentLink>>("/api/ContentLink");
+    }
+}

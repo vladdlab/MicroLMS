@@ -1,0 +1,42 @@
+﻿@page "/DisciplineCreate"
+@using System.ComponentModel.DataAnnotations
+@inject HttpClient _http
+@inject NavigationManager _myNavigationManager
+
+<section class="--container">
+    <h1 class="title h3">Создание дисциплины</h1>
+    <EditForm Model="@_discipline">
+        <DataAnnotationsValidator/>
+        <ValidationSummary/>
+        <div class="mb-3">
+            <label class="form-label" for="discipline-name">Название дисциплины:</label>
+            <InputText class="form-control" id="discipline-name" @bind-Value="_discipline.Name"></InputText>
+        </div>
+        <div class="d-flex justify-content-end">
+                <button class="btn btn-success" @onclick="@SaveDiscipline">Сохранить</button>
+            </div>
+    </EditForm>
+</section>
+
+@code {
+    private Discipline _discipline = new();
+
+    class Discipline
+    {
+        public Guid Id { get; set; }
+
+        [Required]
+        public string? Name { get; set; }
+    }
+
+    private async Task SaveDiscipline()
+    {
+        await CreateDiscipline();
+    }
+    private async Task CreateDiscipline()
+    {
+        var response = await _http.PostAsJsonAsync("/api/Discipline", _discipline);
+        _discipline = await response.Content.ReadFromJsonAsync<Discipline>() ?? throw new InvalidOperationException();
+        _myNavigationManager.NavigateTo("/disciplines");
+    }
+}

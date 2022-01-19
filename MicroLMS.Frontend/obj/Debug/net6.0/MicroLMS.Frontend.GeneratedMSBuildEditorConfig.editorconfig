@@ -1,0 +1,63 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = browser
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = true
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = MicroLMS.Frontend
+build_property.RootNamespace = MicroLMS.Frontend
+build_property.ProjectDir = C:\vlad\MicroLMS\MicroLMS.Frontend\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\vlad\MicroLMS\MicroLMS.Frontend
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/vlad/MicroLMS/MicroLMS.Frontend/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/vlad/MicroLMS/MicroLMS.Frontend/Pages/DisciplineCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzY2lwbGluZUNyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/vlad/MicroLMS/MicroLMS.Frontend/Pages/DisciplineEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzY2lwbGluZUVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/vlad/MicroLMS/MicroLMS.Frontend/Pages/DisciplineIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzY2lwbGluZUluZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/vlad/MicroLMS/MicroLMS.Frontend/Pages/DisciplineView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzY2lwbGluZVZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/vlad/MicroLMS/MicroLMS.Frontend/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/vlad/MicroLMS/MicroLMS.Frontend/Pages/SessionCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2Vzc2lvbkNyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/vlad/MicroLMS/MicroLMS.Frontend/Pages/SessionEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2Vzc2lvbkVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/vlad/MicroLMS/MicroLMS.Frontend/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/vlad/MicroLMS/MicroLMS.Frontend/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-wgmq2kpywq
+
+[C:/vlad/MicroLMS/MicroLMS.Frontend/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-dox9tpj2v4

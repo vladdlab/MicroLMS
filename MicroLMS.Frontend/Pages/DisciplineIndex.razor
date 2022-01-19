@@ -1,0 +1,73 @@
+﻿@page "/disciplines"
+@inject HttpClient _http
+
+<PageTitle>Дисциплины</PageTitle>
+
+
+<section class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="title h3">Список дисциплин</h1>
+        <NavLink href="/DisciplineCreate">
+            <button class="btn btn-primary">Добавить дисциплину</button>
+        </NavLink>
+    </div>
+    @if (_disciplines == null || _disciplines.Count == 0)
+    {
+        <div class="row align-items-center text-center list-placeholder">
+            <p class="h2 text-muted">Список пуст...</p>
+        </div>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Название</th>
+                    <th scope="col">Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var discipline in _disciplines)
+            {
+
+                <tr style="cursor: pointer;">
+                    <th class="list-link" scope="row" style="width: 0"><a href="@discipline.Url"></a>@discipline.ShortId</th>
+                    <td class="list-link" ><a href="@discipline.Url"></a>@discipline.Name</td>
+                    <td style="width: 0">
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-danger" @onclick="@(e =>  RemoveDiscipline(@discipline))">
+                                <span class="oi oi-delete" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        
+        
+    }
+</section>
+
+@code {
+private IList<Discipline>? _disciplines;
+
+    protected override async Task OnInitializedAsync()
+    {
+    _disciplines = await _http.GetFromJsonAsync<IList<Discipline>>("/api/Discipline");
+        }
+
+        private async Task RemoveDiscipline(Discipline discipline)
+        {
+        await _http.DeleteAsync("/api/Discipline/" + discipline.Id);
+        _disciplines.Remove(discipline);
+        }
+
+        public class Discipline :Domain.Discipline
+        {
+        public string Url => "/disciplines/" + Id;
+        public string ShortId => Id.ToString().Substring(0, 5);
+        }
+
+        }

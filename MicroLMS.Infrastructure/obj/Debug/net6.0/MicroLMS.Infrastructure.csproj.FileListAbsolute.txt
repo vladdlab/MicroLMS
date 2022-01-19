@@ -1,0 +1,17 @@
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\bin\Debug\net6.0\MicroLMS.Infrastructure.deps.json
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\bin\Debug\net6.0\MicroLMS.Infrastructure.runtimeconfig.json
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\bin\Debug\net6.0\MicroLMS.Infrastructure.dll
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\bin\Debug\net6.0\ref\MicroLMS.Infrastructure.dll
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\bin\Debug\net6.0\MicroLMS.Infrastructure.pdb
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\bin\Debug\net6.0\MicroLMS.Domain.dll
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\bin\Debug\net6.0\MicroLMS.Domain.pdb
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\obj\Debug\net6.0\MicroLMS.Infrastructure.csproj.AssemblyReference.cache
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\obj\Debug\net6.0\MicroLMS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\obj\Debug\net6.0\MicroLMS.Infrastructure.AssemblyInfoInputs.cache
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\obj\Debug\net6.0\MicroLMS.Infrastructure.AssemblyInfo.cs
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\obj\Debug\net6.0\MicroLMS.Infrastructure.csproj.CoreCompileInputs.cache
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\obj\Debug\net6.0\MicroLMS.Infrastructure.csproj.CopyComplete
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\obj\Debug\net6.0\MicroLMS.Infrastructure.dll
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\obj\Debug\net6.0\ref\MicroLMS.Infrastructure.dll
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\obj\Debug\net6.0\MicroLMS.Infrastructure.pdb
+C:\vlad\MicroLMS\MicroLMS.Infrastructure\obj\Debug\net6.0\MicroLMS.Infrastructure.genruntimeconfig.cache

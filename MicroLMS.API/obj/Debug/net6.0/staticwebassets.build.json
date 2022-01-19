@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5+isHfeqne61z1CpnaJy0uPzKD9yFzkMvVwZ7w4TcBs=",
+  "Source": "MicroLMS.API",
+  "BasePath": "_content/MicroLMS.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

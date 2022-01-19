@@ -1,0 +1,12 @@
+C:\vlad\MicroLMS\MicroLMS.Domain\bin\Release\net6.0\MicroLMS.Domain.deps.json
+C:\vlad\MicroLMS\MicroLMS.Domain\bin\Release\net6.0\MicroLMS.Domain.dll
+C:\vlad\MicroLMS\MicroLMS.Domain\bin\Release\net6.0\ref\MicroLMS.Domain.dll
+C:\vlad\MicroLMS\MicroLMS.Domain\bin\Release\net6.0\MicroLMS.Domain.pdb
+C:\vlad\MicroLMS\MicroLMS.Domain\obj\Release\net6.0\MicroLMS.Domain.csproj.AssemblyReference.cache
+C:\vlad\MicroLMS\MicroLMS.Domain\obj\Release\net6.0\MicroLMS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\vlad\MicroLMS\MicroLMS.Domain\obj\Release\net6.0\MicroLMS.Domain.AssemblyInfoInputs.cache
+C:\vlad\MicroLMS\MicroLMS.Domain\obj\Release\net6.0\MicroLMS.Domain.AssemblyInfo.cs
+C:\vlad\MicroLMS\MicroLMS.Domain\obj\Release\net6.0\MicroLMS.Domain.csproj.CoreCompileInputs.cache
+C:\vlad\MicroLMS\MicroLMS.Domain\obj\Release\net6.0\MicroLMS.Domain.dll
+C:\vlad\MicroLMS\MicroLMS.Domain\obj\Release\net6.0\ref\MicroLMS.Domain.dll
+C:\vlad\MicroLMS\MicroLMS.Domain\obj\Release\net6.0\MicroLMS.Domain.pdb
